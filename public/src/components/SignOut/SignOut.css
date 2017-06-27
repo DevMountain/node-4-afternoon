@@ -1,0 +1,18 @@
+#SignOut__parent {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  background: #fff;
+  width: auto;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+  cursor: pointer;
+}
+
+#SignOut__icon {
+  position: relative;
+  top: -2px;
+}

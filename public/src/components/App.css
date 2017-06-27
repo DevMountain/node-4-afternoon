@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+#App__container {
+  width: 100%;
+  min-width: 1440px;
+  height: 100vh;
+  min-height: 800px;
+}

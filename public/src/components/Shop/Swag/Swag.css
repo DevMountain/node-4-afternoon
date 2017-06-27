@@ -1,0 +1,46 @@
+#Swag__parent {
+  width: 250px;
+  height: 150px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+  
+  position: relative;
+}
+
+#Swag__detailsContainer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+}
+
+#Swag__priceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+#Swag__atcContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  background-color: skyblue;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+}
+
+#Swag__name {
+  position: absolute;
+  top: 30px;
+}
