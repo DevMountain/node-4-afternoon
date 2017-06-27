@@ -1,0 +1,85 @@
+#Checkout__parent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#Checkout__child {
+  width: 550px;
+  max-height: calc( 100% - 50px );
+  height: auto;
+  box-sizing: border-box;
+  padding: 25px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+#Checkout__bottomContainer {
+  display: flex;
+  height: 60px;
+  margin-top: 20px;
+  position: relative;
+}
+
+#Checkout__btn {
+  width: 100%;
+  height: 30px;
+  border: none;
+  background-color: skyblue;
+  border-radius: 2px;
+  color: white;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+  position: absolute;
+  bottom: 0;
+}
+
+#Checkout__total {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#Checkout__backToShop {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  background: #fff;
+  width: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+  cursor: pointer;
+}
+
+#Checkout__backArrow {
+  margin-right: 3px;
+  position: relative;
+  top: -2px;
+}
+
+#Checkout__swagParent {
+  width: 100%;
+  max-height: 700px;
+  min-height: 200px;
+  height: auto;
+  background: #f2f2f2;
+  box-sizing: border-box;
+  padding: 5px;
+  box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+#Checkout__swagChild {
+  width: 100%;
+  max-height: 690px;
+  min-height: 200px;
+  height: auto;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 10px;
+}

@@ -1,0 +1,17 @@
+#User__parent {
+  position: absolute;
+  top: 0;
+  right: 145px;
+  background: #fff;
+  width: auto;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+}
+
+#User__icon {
+  margin-right: 3px;
+  position: relative;
+  top: -2px;
+}
