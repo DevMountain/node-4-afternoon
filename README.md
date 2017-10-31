@@ -394,7 +394,7 @@ In this step, we'll create a authorization controller that can handle logging in
 Let's begin by creating an `auth_controller.js` file in `server/controllers/`. This controller will be responsible for logging in users, registering users, signing out users, and also retrieving user information. Since we'll be working with users, we'll need to require the `user.js` file from `server/models/users.js`. This javascript file exports an array of all the users. 
 
 ```js
-const swag = require('../models/swag');
+const swag = require('../models/users');
 ```
 
 We'll also need to create a global `id` variable. We'll use this variable to assign `id`s to newly registered users and then increment it by one so no users have the same id.
@@ -611,7 +611,7 @@ In this step, we'll create a cart controller that can handle adding and deleting
 * Create a file called `cart_controller.js` in `server/controllers`.
 * Require `swag` from `models/swag.js`.
   * This is just an array of swag objects.
-* Export an object with an `add`, `delete`, and `checkout` method.
+* Export an object with an `add`, `remove`, and `checkout` method.
 * Each method should capture `req`, `res`, and `next` as parameters.
 * `add`:
   * Should check the request query for an `id`.
@@ -651,7 +651,7 @@ module.exports = {
 
   },
 
-  delete: ( req, res, next ) => {
+  remove: ( req, res, next ) => {
 
   },
 
@@ -682,10 +682,10 @@ add: ( req, res, next ) => {
 }
 ```
 
-Now let's move on to `delete`. This method will be responsible for removing swag from the cart. It should try and see if the swag is in the cart. If it is, remove the swag from the cart and subtract the price from the total. If it isn't, don't do anything to the cart. The method should then return a status of 200 with the request session user's object.
+Now let's move on to `remove`. This method will be responsible for removing swag from the cart. It should try and see if the swag is in the cart. If it is, remove the swag from the cart and subtract the price from the total. If it isn't, don't do anything to the cart. The method should then return a status of 200 with the request session user's object.
 
 ```js
-delete: ( req, res, next ) => {
+remove: ( req, res, next ) => {
   const { id } = req.query;
   const { cart } = req.session.user;
 
@@ -739,7 +739,7 @@ module.exports = {
     res.status(200).send( req.session.user );
   },
 
-  delete: ( req, res, next ) => {
+  remove: ( req, res, next ) => {
     const { id } = req.query;
     const { cart } = req.session.user;
 
@@ -777,7 +777,7 @@ In this step, we'll require the cart controller and create endpoints to hit ever
 * Create the following endpoints: ( `request method`, `url`, `controller method` )
   * `POST` - `/api/cart` - `cart_controller.add`.
   * `POST` - `/api/cart/checkout` - `cart_controller.checkout`.
-  * `DELETE` - `/api/cart` - `cart_controller.delete`.
+  * `DELETE` - `/api/cart` - `cart_controller.remove`.
 * Test your endpoints using postman.
   * Try adding an item to the cart by `id` ( 1 - 35 ).
   * Try remove an item from the cart by `id` ( 1 - 35 ).
@@ -824,7 +824,7 @@ app.get( '/api/user', auth_controller.getUser );
 // Cart 
 app.post( '/api/cart', cart_controller.add );
 app.post( '/api/cart/checkout', cart_controller.checkout );
-app.delete( '/api/cart', cart_controller.delete );
+app.delete( '/api/cart', cart_controller.remove );
 
 const port = 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
@@ -969,7 +969,7 @@ app.get( '/api/user', auth_controller.getUser );
 // Cart 
 app.post( '/api/cart', cart_controller.add );
 app.post( '/api/cart/checkout', cart_controller.checkout );
-app.delete( '/api/cart', cart_controller.delete );
+app.delete( '/api/cart', cart_controller.remove );
 
 // Search
 app.get( '/api/search', search_controller.search );
@@ -1036,7 +1036,7 @@ app.get( '/api/user', auth_controller.getUser );
 // Cart 
 app.post( '/api/cart', cart_controller.add );
 app.post( '/api/cart/checkout', cart_controller.checkout );
-app.delete( '/api/cart', cart_controller.delete );
+app.delete( '/api/cart', cart_controller.remove );
 
 // Search
 app.get( '/api/search', search_controller.search );
