@@ -361,7 +361,7 @@ app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 
 ### Summary
 
-In this step, we'll create a authorization controller that can handle logging in, registering, signing out, and also reading the user from `req.session`.
+In this step, we'll create an authorization controller that can handle logging in, registering, signing out, and also reading the user from `req.session`.
 
 ### Instructions
 
