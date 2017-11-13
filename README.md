@@ -12,7 +12,7 @@ In this step, we'll install, save, and require the npm packages we'll need.
 
 ### Instructions
 
-* Run `npm install --save express body-parser express-session`.
+* Run `npm install --save express body-parser express-session dotenv`.
 * Open `server/index.js` and require all the packages at the top of the file.
 
 ### Solution
@@ -25,6 +25,7 @@ In this step, we'll install, save, and require the npm packages we'll need.
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+require('dotenv').config();
 ```
 
 </details>
@@ -54,23 +55,25 @@ Now that `index.js` has access to all the packages, let's create an express appl
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+require('dotenv').config();
 
 const app = express();
 ```
 
-We can then add middleware to the app. Let's add `bodyParser.json` so we can read JSON from the request body and add `session` so we can create sessions. Remember that `session` needs a configuration object as the first argument. The object should have a `secret`, `resave`, and `saveUninitialized` property. `secret` can be any string you like and `resave` and `saveUninitialized` should equal `false`.
+We can then add middleware to the app. Let's add `bodyParser.json` so we can read JSON from the request body and add `session` so we can create sessions. Remember that `session` needs a configuration object as the first argument. The object should have a `secret`, `resave`, and `saveUninitialized` property. `secret` can be any string you like that is stored in your `.env` file and `resave` and `saveUninitialized` should equal `true`.
 
 ```js
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+require('dotenv').config();
 
 const app = express();
 app.use( bodyParser.json() );
 app.use( session({
-  secret: '@nyth!ng y0u w@nT',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 ```
 
@@ -80,16 +83,17 @@ Finally, let's have our app `listen` on port 3000.
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+require('dotenv').config();
 
 const app = express();
 app.use( bodyParser.json() );
 app.use( session({
-  secret: '@nyth!ng y0u w@nT',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -105,16 +109,17 @@ app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+require('dotenv').config();
 
 const app = express();
 app.use( bodyParser.json() );
 app.use( session({
-  secret: '@nyth!ng y0u w@nT',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -220,6 +225,7 @@ In this step, we'll require our middleware in `index.js` and add it to `app`.
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+require('dotenv').config();
 
 const checkForSession = require('./middlewares/checkForSession');
 
@@ -227,13 +233,13 @@ const app = express();
 
 app.use( bodyParser.json() );
 app.use( session({
-  secret: '@nyth!ng y0u w@nT',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 app.use( checkForSession );
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -324,6 +330,7 @@ module.exports = {
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+require('dotenv').config();
 
 // Middleware
 const checkForSession = require('./middlewares/checkForSession');
@@ -335,16 +342,16 @@ const app = express();
 
 app.use( bodyParser.json() );
 app.use( session({
-  secret: '@nyth!ng y0u w@nT',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 app.use( checkForSession );
 
 // Swag
 app.get( '/api/swag', swag_controller.read );
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -567,6 +574,7 @@ In this step, we'll require the auth controller in `server/index.js` and create 
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+require('dotenv').config();
 
 // Middleware
 const checkForSession = require('./middlewares/checkForSession');
@@ -579,9 +587,9 @@ const app = express();
 
 app.use( bodyParser.json() );
 app.use( session({
-  secret: '@nyth!ng y0u w@nT',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 app.use( checkForSession );
 
@@ -594,7 +602,7 @@ app.post( '/api/register', auth_controller.register );
 app.post( '/api/signout', auth_controller.signout );
 app.get( '/api/user', auth_controller.getUser );
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -793,6 +801,7 @@ In this step, we'll require the cart controller and create endpoints to hit ever
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+require('dotenv').config();
 
 // Middleware
 const checkForSession = require('./middlewares/checkForSession');
@@ -806,9 +815,9 @@ const app = express();
 
 app.use( bodyParser.json() );
 app.use( session({
-  secret: '@nyth!ng y0u w@nT',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 app.use( checkForSession );
 
@@ -826,7 +835,7 @@ app.post( '/api/cart', cart_controller.add );
 app.post( '/api/cart/checkout', cart_controller.checkout );
 app.delete( '/api/cart', cart_controller.delete );
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -937,6 +946,7 @@ In this step, we'll require the search controller and create an endpoint to hit 
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+require('dotenv').config();
 
 // Middleware
 const checkForSession = require('./middlewares/checkForSession');
@@ -951,9 +961,9 @@ const app = express();
 
 app.use( bodyParser.json() );
 app.use( session({
-  secret: '@nyth!ng y0u w@nT',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 app.use( checkForSession );
 
@@ -974,7 +984,7 @@ app.delete( '/api/cart', cart_controller.delete );
 // Search
 app.get( '/api/search', search_controller.search );
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -989,7 +999,7 @@ In this step, we'll use the provided `postman_collection` to test all the endpoi
 ### Instructions
 
 * Open `server/index.js`.
-* Add middleware to use `express.static` to serve up the build folder in `public/build`.
+* Add middleware to use `express.static` to serve up the build folder in `/build`.
 * Open `http://localhost:3000/` to see the API interact with a React front-end.
 * Import the `postman_collection` into postman and run the Unit Tests to make sure they all pass.
 
@@ -1003,6 +1013,7 @@ In this step, we'll use the provided `postman_collection` to test all the endpoi
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+require('dotenv').config();
 
 // Middleware
 const checkForSession = require('./middlewares/checkForSession');
@@ -1017,12 +1028,12 @@ const app = express();
 
 app.use( bodyParser.json() );
 app.use( session({
-  secret: '@nyth!ng y0u w@nT',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 app.use( checkForSession );
-app.use( express.static( `${__dirname}/../public/build` ) );
+app.use( express.static( `${__dirname}/build` ) );
 
 // Swag
 app.get( '/api/swag', swag_controller.read );
@@ -1041,7 +1052,7 @@ app.delete( '/api/cart', cart_controller.delete );
 // Search
 app.get( '/api/search', search_controller.search );
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
