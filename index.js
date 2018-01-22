@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-require('dotenv').config();
+const Path = require('path');
+// require('dotenv').config();
 
 // Middleware
 const checkForSession = require('./middlewares/checkForSession');
@@ -16,7 +17,7 @@ const app = express();
 
 app.use( bodyParser.json() );
 app.use( session({
-  secret: process.env.SESSION_SECRET,
+  secret: '$up3r $3cr3t',
   resave: false,
   saveUninitialized: true
 }));
@@ -40,5 +41,10 @@ app.delete( '/api/cart', cart_controller.delete );
 // Search
 app.get( '/api/search', search_controller.search );
 
-const port = process.env.PORT || 3000;
+app.use( express.static( __dirname + '/public/build/') );
+app.get( '*', ( req, res, next ) => {
+  res.sendFile( Path.resolve( __dirname + '/public/build/index.html') );
+});
+
+const port = 10009;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
