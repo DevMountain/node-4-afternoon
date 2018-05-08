@@ -752,6 +752,8 @@ module.exports = {
   delete: ( req, res, next ) => {
     const { id } = req.query;
     const { cart } = req.session.user;
+    
+    const selectedSwag = swag.find( swag => swag.id == id );
 
     if ( selectedSwag ) {
       const i = cart.findIndex( swag => swag.id == id );
