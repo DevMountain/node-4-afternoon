@@ -14,6 +14,7 @@ In this step, we'll install, save, and require the npm packages we'll need.
 
 * Run `npm install --save express body-parser express-session dotenv`.
 * Open `server/index.js` and require all the packages at the top of the file.
+* create a `.env` and include the `SESSION_SECRET` and `SERVER_PORT`
 
 ### Solution
 
