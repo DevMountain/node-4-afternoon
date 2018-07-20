@@ -94,7 +94,7 @@ app.use( session({
   saveUninitialized: true
 }));
 
-const port = process.env.PORT || 3000;
+const port = process.env.SERVER_PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -120,7 +120,7 @@ app.use( session({
   saveUninitialized: true
 }));
 
-const port = process.env.PORT || 3000;
+const port = process.env.SERVER_PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -240,7 +240,7 @@ app.use( session({
 }));
 app.use( checkForSession );
 
-const port = process.env.PORT || 3000;
+const port = process.env.SERVER_PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -352,7 +352,7 @@ app.use( checkForSession );
 // Swag
 app.get( '/api/swag', swag_controller.read );
 
-const port = process.env.PORT || 3000;
+const port = process.env.SERVER_PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -603,7 +603,7 @@ app.post( '/api/register', auth_controller.register );
 app.post( '/api/signout', auth_controller.signout );
 app.get( '/api/user', auth_controller.getUser );
 
-const port = process.env.PORT || 3000;
+const port = process.env.SERVER_PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -840,7 +840,7 @@ app.post( '/api/cart', cart_controller.add );
 app.post( '/api/cart/checkout', cart_controller.checkout );
 app.delete( '/api/cart', cart_controller.delete );
 
-const port = process.env.PORT || 3000;
+const port = process.env.SERVER_PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -989,7 +989,7 @@ app.delete( '/api/cart', cart_controller.delete );
 // Search
 app.get( '/api/search', search_controller.search );
 
-const port = process.env.PORT || 3000;
+const port = process.env.SERVER_PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
@@ -1057,7 +1057,7 @@ app.delete( '/api/cart', cart_controller.delete );
 // Search
 app.get( '/api/search', search_controller.search );
 
-const port = process.env.PORT || 3000;
+const port = process.env.SERVER_PORT || 3000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
 ```
 
