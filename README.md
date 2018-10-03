@@ -402,13 +402,12 @@ In this step, we'll create an authorization controller that can handle logging i
 Let's begin by creating an `auth_controller.js` file in `server/controllers/`. This controller will be responsible for logging in users, registering users, signing out users, and also retrieving user information. Since we'll be working with users, we'll need to require the `user.js` file from `server/models/users.js`. This javascript file exports an array of all the users. 
 
 ```js
-const swag = require('../models/swag');
+const users = require('../models/users');
 ```
 
 We'll also need to create a global `id` variable. We'll use this variable to assign `id`s to newly registered users and then increment it by one so no users have the same id.
 
 ```js
-const users = require('../models/users');
 let id = 1;
 ```
 
@@ -452,7 +451,7 @@ Now let's focus on `signout`. This method is responsible for destroying the sess
 signout: ( req, res, next ) => {
   const { session } = req;
   session.destroy();
-  res.status(200).send( req.session );
+  res.status(200).send( session );
 }
 ```
 
