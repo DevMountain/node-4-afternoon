@@ -23,6 +23,7 @@ module.exports = [
   { id: 21, title: 'Beanie ( green )', category: 'hats', price: 7 },
   { id: 32, title: 'Shorts ( blue )', category: 'shorts', price: 15 },
   { id: 7, title: 'Jacket ( blue )', category: 'jackets', price: 15 },
+  { id: 27, title: 'Jacket ( purple )', catagory: 'jackets', price: 15 },
   { id: 33, title: 'T-Shirt ( red )', category: 'shirts', price: 10 },
   { id: 22, title: 'Sweater ( orange )', category: 'sweaters', price: 12 },
   { id: 8, title: 'Jacket ( green )', category: 'jackets', price: 15 },
