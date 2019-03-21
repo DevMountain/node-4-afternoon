@@ -706,7 +706,7 @@ delete: (req, res) => {
   const selectedSwag = swag.find(swag => swag.id == id);
 
   if (index !== -1) {
-    user.cart.splice(i, 1);
+    user.cart.splice(index, 1);
     user.total -= selectedSwag.price;
   }
 
@@ -794,9 +794,10 @@ In this step, we'll require the cart controller and create endpoints to hit ever
 * Open `server/index.js`.
 * Require the cart controller.
 * Create the following endpoints: ( `request method`, `url`, `controller method` )
-  * `POST` - `/api/cart` - `cartController.add`.
   * `POST` - `/api/cart/checkout` - `cartController.checkout`.
-  * `DELETE` - `/api/cart` - `cartController.delete`.
+    * _NOTE:_ It is very important that this endpoint come first.
+  * `POST` - `/api/cart/:id` - `cartController.add`.
+  * `DELETE` - `/api/cart/:id` - `cartController.delete`.
 * Test your endpoints using `Postman`.
   * Try adding an item to the cart by `id` ( 1 - 35 ).
   * Try remove an item from the cart by `id` ( 1 - 35 ).
@@ -841,9 +842,9 @@ app.get("/api/user", authController.getUser);
 //// Swag
 app.get("/api/swag", swagController.read);
 //// Cart
-app.post("/api/cart", cartController.add);
 app.post("/api/cart/checkout", cartController.checkout);
-app.delete("/api/cart", cartController.delete);
+app.post("/api/cart/:id", cartController.add);
+app.delete("/api/cart/:id", cartController.delete);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on port ${SERVER_PORT}.`);
@@ -983,9 +984,9 @@ app.get("/api/user", authController.getUser);
 //// Swag
 app.get("/api/swag", swagController.read);
 //// Cart
-app.post("/api/cart", cartController.add);
 app.post("/api/cart/checkout", cartController.checkout);
-app.delete("/api/cart", cartController.delete);
+app.post("/api/cart/:id", cartController.add);
+app.delete("/api/cart/:id", cartController.delete);
 // Search
 app.get("/api/search", searchController.search);
 
@@ -1050,9 +1051,9 @@ app.get("/api/user", authController.getUser);
 //// Swag
 app.get("/api/swag", swagController.read);
 //// Cart
-app.post("/api/cart", cartController.add);
 app.post("/api/cart/checkout", cartController.checkout);
-app.delete("/api/cart", cartController.delete);
+app.post("/api/cart/:id", cartController.add);
+app.delete("/api/cart/:id", cartController.delete);
 // Search
 app.get("/api/search", searchController.search);
 
