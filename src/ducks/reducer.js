@@ -104,14 +104,14 @@ export function searchSwag( category ) {
 export function addToCart( id ) {
   return {
     type: ADD_TO_CART,
-    payload: axios.post( `${URL.cart}?id=${id}` ).then( response => response.data )
+    payload: axios.post( `${URL.cart}/${id}` ).then( response => response.data )
   };
 }
 
 export function removeFromCart( id ) {
   return {
     type: REMOVE_FROM_CART,
-    payload: axios.delete( `${URL.cart}?id=${id}` ).then( response => response.data )
+    payload: axios.delete( `${URL.cart}/${id}` ).then( response => response.data )
   };
 }
 
