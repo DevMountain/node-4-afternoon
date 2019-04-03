@@ -478,9 +478,8 @@ Next up is `signout`. This method is responsible for destroying the session and 
 
 ```js
 signout: (req, res) => {
-  const { session } = req;
-  session.destroy();
-  res.status(200).send(session);
+  req.session.destroy();
+  res.status(200).send(req.session);
 }
 ```
 
@@ -535,9 +534,8 @@ module.exports = {
   },
 
   signout: (req, res) => {
-    const { session } = req;
-    session.destroy();
-    res.status(200).send(session);
+    req.session.destroy();
+    res.status(200).send(req.session);
   },
 
   getUser: (req, res) => {
@@ -763,7 +761,7 @@ module.exports = {
     const selectedSwag = swag.find(swag => swag.id == id);
 
     if (index !== -1) {
-      user.cart.splice(i, 1);
+      user.cart.splice(index, 1);
       user.total -= selectedSwag.price;
     }
 
