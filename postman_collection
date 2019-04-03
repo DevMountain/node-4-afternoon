@@ -162,7 +162,7 @@
 		{
 			"id": "a40e1dd1-8e0f-c9b6-4172-e4f5511609e8",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/cart?id=2",
+			"url": "http://localhost:3000/api/cart/2",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -221,7 +221,7 @@
 		{
 			"id": "c158bb64-efce-de9e-29ec-cd69486fcf9b",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/cart?id=2",
+			"url": "http://localhost:3000/api/cart/2",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "DELETE",
@@ -240,7 +240,7 @@
 		{
 			"id": "fd62008c-fafc-79a7-a028-04b50f19db82",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/cart?id=1",
+			"url": "http://localhost:3000/api/cart/1",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
