@@ -1006,6 +1006,7 @@ In this step, we'll use the provided `postman_collection` to test all the endpoi
 ### Instructions
 
 * Open `server/index.js`.
+* In the root of your project, run `npm run build` to create a fresh `build` folder
 * Add middleware to use `express.static` to serve up the build folder in `/build`.
 * Open `http://localhost:3000/` to see the API interact with a React front-end.
 * Import the `postman_collection` into `Postman` and run the Unit Tests to make sure they all pass.
