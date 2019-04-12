@@ -8,14 +8,15 @@ In this project, we'll create a node back-end for DevMountain's swag shop. We'll
 
 ### Summary
 
-In this step, we'll install, save, and require the npm packages we'll need.
+In this step, we'll install and require the npm packages we'll need.
 
 ### Instructions
 
 * Run `npm install express express-session dotenv`.
 * Open `server/index.js` and require all the packages at the top of the file.
 * create a `.env` and include the `SESSION_SECRET` and `SERVER_PORT`
-  * Both the tests and the front end are expecting the server port to be 3000.
+  * Both the tests and the front end are expecting the server port to be 
+  .
 
 ### Solution
 
@@ -36,7 +37,7 @@ const session = require("express-session");
 <summary> <code> .env </code> </summary>
 
 ```
-SERVER_PORT = 3000
+SERVER_PORT = 3001
 SESSION_SECRET = s3cretsfjkdsfjdksljfkldskjld
 ```
 
@@ -46,7 +47,7 @@ SESSION_SECRET = s3cretsfjkdsfjdksljfkldskjld
 
 ### Summary
 
-In this step, we'll create an express `app`, use `express.json` and `session` middleware, and have our server listen on port `3000`.
+In this step, we'll create an express `app`, use `express.json` and `session` middleware, and have our server listen on port `3001`.
 
 ### Instructions
 
@@ -87,7 +88,7 @@ app.use(
 
 ```
 
-Finally, let's have our app `listen` on port 3000.
+Finally, let's have our app `listen` on port 3001.
 
 ```js
 app.listen(SERVER_PORT, () => {
@@ -271,7 +272,7 @@ In this step, we'll create a swag controller that can `read` the swag from `mode
 * Open `server/index.js`.
 * Require the swag controller.
 * Create a `GET` endpoint at `/api/swag` that calls the `read` method from the swag controller.
-* Hit `http://localhost:3000/api/swag` in `Postman` to make sure you are getting the swag array.
+* Hit `http://localhost:3001/api/swag` in `Postman` to make sure you are getting the swag array.
 
 <details>
 
@@ -1006,7 +1007,8 @@ In this step, we'll use the provided `postman_collection` to test all the endpoi
 * Open `server/index.js`.
 * In the root of your project, run `npm run build` to create a fresh `build` folder
 * Add middleware to use `express.static` to serve up the build folder in `/build`.
-* Open `http://localhost:3000/` to see the API interact with a React front-end.
+* Open `http://localhost:
+/` to see the API interact with a React front-end.
 * Import the `postman_collection` into `Postman` and run the Unit Tests to make sure they all pass.
 
 ### Solution
@@ -1062,6 +1064,26 @@ app.listen(SERVER_PORT, () => {
 ```
 
 </details>
+
+## Resources
+
+<details>
+
+<summary> <code> Sessions </code> </summary>
+
+* [Understanding resave and saveUninitialized](https://stackoverflow.com/a/40396102)
+
+</details>
+
+<details>
+
+<summary> <code> Express </code> </summary>
+
+* [Express ](https://expressjs.com/en/guide/writing-middleware.html)
+
+</details>
+
+
 
 ## Contributions
 
