@@ -655,7 +655,7 @@ Let's begin by creating a `cartController.js` file in `server/controllers/`. Thi
 const swag = require("../models/swag");
 ```
 
-Now, let's export an object with a `add`, `remove`, and `checkout` method. Each method should capture `req`, `res`, and `next` as parameters.
+Now, let's export an object with a `add`, `remove`, and `checkout` method. Each method should capture `req` and `res` as parameters.
 
 ```js
 module.exports = {
