@@ -117,7 +117,7 @@ app.use(express.json());
 app.use(
   session({
     secret: SESSION_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: true
   })
 );
@@ -241,7 +241,7 @@ app.use(express.json());
 app.use(
   session({
     secret: SESSION_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: true
   })
 );
@@ -350,7 +350,7 @@ app.use(express.json());
 app.use(
   session({
     secret: SESSION_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: true
   })
 );
@@ -592,7 +592,7 @@ app.use(express.json());
 app.use(
   session({
     secret: SESSION_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: true
   })
 );
@@ -826,7 +826,7 @@ app.use(express.json());
 app.use(
   session({
     secret: SESSION_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: true
   })
 );
@@ -968,7 +968,7 @@ app.use(express.json());
 app.use(
   session({
     secret: SESSION_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: true
   })
 );
@@ -1036,7 +1036,7 @@ app.use(express.json());
 app.use(
   session({
     secret: SESSION_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: true
   })
 );
