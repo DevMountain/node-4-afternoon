@@ -15,8 +15,7 @@ In this step, we'll install and require the npm packages we'll need.
 * Run `npm install express express-session dotenv`.
 * Open `server/index.js` and require all the packages at the top of the file.
 * create a `.env` and include the `SESSION_SECRET` and `SERVER_PORT`
-  * Both the tests and the front end are expecting the server port to be 
-  .
+  * Both the tests and the front end are expecting the server port to be 3001.
 
 ### Solution
 
