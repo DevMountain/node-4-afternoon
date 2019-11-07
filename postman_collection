@@ -24,7 +24,7 @@
 		{
 			"id": "13dddc19-0588-8fcb-25ed-d7152a07abd5",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/search?category=pants",
+			"url": "http://localhost:3001/api/search?category=pants",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -44,7 +44,7 @@
 		{
 			"id": "2ea5ca4a-13f3-cded-7224-eb3c44f32439",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/swag",
+			"url": "http://localhost:3001/api/swag",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -64,7 +64,7 @@
 		{
 			"id": "49074c0f-ee7a-853c-db07-4b0441333e0e",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/register",
+			"url": "http://localhost:3001/api/register",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -83,7 +83,7 @@
 		{
 			"id": "5ae9a360-5c81-39cc-eb7f-665e5086f506",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/signout",
+			"url": "http://localhost:3001/api/signout",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -103,7 +103,7 @@
 		{
 			"id": "86c293b1-b425-3b59-e8c4-17dd832bf946",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/search?category=shirts",
+			"url": "http://localhost:3001/api/search?category=shirts",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -123,7 +123,7 @@
 		{
 			"id": "8718cfcb-698d-f2f7-1fe7-b894e5862fa6",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/register",
+			"url": "http://localhost:3001/api/register",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -142,7 +142,7 @@
 		{
 			"id": "9ba225cf-92de-11ce-5efc-c2603afa6bb5",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/user",
+			"url": "http://localhost:3001/api/user",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -162,7 +162,7 @@
 		{
 			"id": "a40e1dd1-8e0f-c9b6-4172-e4f5511609e8",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/cart/2",
+			"url": "http://localhost:3001/api/cart/2",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -181,7 +181,7 @@
 		{
 			"id": "b5d2575c-c656-6958-eaab-89319da09f72",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/search?category=hats",
+			"url": "http://localhost:3001/api/search?category=hats",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -201,7 +201,7 @@
 		{
 			"id": "bab27a29-6e5a-4c55-c00e-218c0e20601d",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/cart/checkout",
+			"url": "http://localhost:3001/api/cart/checkout",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -221,7 +221,7 @@
 		{
 			"id": "c158bb64-efce-de9e-29ec-cd69486fcf9b",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/cart/2",
+			"url": "http://localhost:3001/api/cart/2",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "DELETE",
@@ -240,7 +240,7 @@
 		{
 			"id": "fd62008c-fafc-79a7-a028-04b50f19db82",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/api/cart/1",
+			"url": "http://localhost:3001/api/cart/1",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
